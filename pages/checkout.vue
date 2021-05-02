@@ -37,7 +37,6 @@ export default {
   components: {
     ProgressBullets,
     TailFoot,
-    TwoColVanilla,
     QuoteBanner
   },
   data () {
