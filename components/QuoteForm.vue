@@ -205,7 +205,7 @@
 </template>
 
 <script>
-import QuoteStep from '~/Components/QuoteStep'
+import QuoteStep from '~/components/QuoteStep'
 export default {
   name: 'QuoteForm',
   components: {

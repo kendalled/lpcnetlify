@@ -58,7 +58,8 @@ export default {
       accessToken: 'qnrtI6sWwGdAhvSqj0Dssgtt',
       cacheProvider: 'memory'
     }],
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/axios'
     // 'nuxt-purgecss'
   ], 
   optimizedImages: {
