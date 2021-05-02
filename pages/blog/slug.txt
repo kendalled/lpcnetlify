@@ -1,0 +1,28 @@
+ <div class="flex-col min-h-screen overflow-y-hidden bg-gray-100">
+    <div class="flex-col min-h-screen py-6">
+      <header>
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold leading-tight text-gray-900">
+            Blog Posts
+          </h2>
+        </div>
+      </header>
+      <main>
+        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <!-- Replace with your content -->
+          <div class="flex justify-between w-auto h-auto py-4 sm:px-0">
+            <!-- <div class="border-4 border-gray-200 border-dashed rounded-lg h-96" /> -->
+            
+          </div>
+          <div class="flex items-center justify-center h-48 mb-8 border-4 border-gray-200 border-dashed rounded-lg">
+            <span class="antialiased italic font-semibold text-gray-500">More Soon...</span>
+          </div>
+          <!-- /End replace -->
+        </div>
+      </main>
+      <!-- Blog footer and padding TODO: move to component -->
+      <BlogFooter />
+      <!-- end blog footer and layout wrapper -->
+    </div>
+  </div>
+  

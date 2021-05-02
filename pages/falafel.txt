@@ -1,0 +1,23 @@
+<template>
+  <div class="flex items-center justify-center w-full min-h-screen">
+    <CheckoutFancy />
+  </div>
+</template>
+
+<script>
+import CheckoutFancy from '~/components/CheckoutFancy'
+export default {
+  components: {
+    CheckoutFancy
+  },
+  layout: 'blank',
+  head () {
+    return {
+      script: [
+        { src: 'https://js.stripe.com/v3/', hid: 'stripe' }
+      ],
+      title: 'Checkout (Complete Your Order) | Lapel Pins & Coins'
+    }
+  }
+}
+</script>

@@ -8,3 +8,25 @@ Vuex Store option is implemented in the Nuxt.js framework.
 Creating a file in this directory automatically activates the option in the framework.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/vuex-store).
+
+cacheVersion.js
+
+export const state = () => ({
+  cacheVersion: ''
+})
+
+export const mutations = {
+  setCacheVersion (state, version) {
+    state.cacheVersion = version
+  }
+}
+
+export const actions = {
+  loadCacheVersion ({
+    commit
+  }) {
+    return this.$storyapi.get('cdn/spaces/me').then((res) => {
+      commit('setCacheVersion', res.data.space.version)
+    })
+  }
+}
