@@ -1,6 +1,8 @@
 <template>
   <div class="min-h-screen bg-gray-100">
     <FloatingBanner message="You have not completed your design options - please finish the steps at the top of the page." message2="Please complete the quote at the top" :show="errorNotif" @close="closeNotif" />
+    <FloatingBanner message="You have incomplete contact information - fill out any empty fields to finish your quote." message2="Please complete your contact information" :show="errorNotifTwo" @close="closeNotifTwo" />
+
     <!-- old nav spot -->
     <div class="py-10">
       <header>
@@ -24,15 +26,18 @@
             :option="option"
             @scroll="testScroll"
             @update="updatePage"
+            @notif="errorNotif = true"
           />
           <TwoColForm
             :class="[!doneFirst ? 'opacity-50' : 'opacity-100']"
             class="transition-opacity duration-300 ease-in-out"
             :greyed="!doneFirst"
             :product="option"
+            @info="doneSecond = true"
             @changed="updateData"
             @submitted="submitHandler"
             @scroll="testScroll"
+            @need="errorNotifTwo = true"
           />
           <!-- /End replace -->
         </form>
@@ -60,8 +65,10 @@ export default {
   },
   data () {
     return {
+      doneSecond: false,
       isGray: true,
       errorNotif: false,
+      errorNotifTwo: false,
       currentPage: 0,
       dropOpen: false,
       twoColData: {
@@ -141,6 +148,7 @@ export default {
     }
   },
   watch: {
+    // TODO: two?
     errorNotif (newVal, oldVal) {
       if (process.browser && newVal) {
         window.scroll({
@@ -157,6 +165,9 @@ export default {
     },
     closeNotif () {
       this.errorNotif = false
+    },
+    closeNotifTwo () {
+      this.errorNotifTwo = false
     },
     submitHandler () {
       if (this.doneFirst) {
