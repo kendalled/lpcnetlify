@@ -7,7 +7,7 @@
       <input id="hiddenFiles" v-model="files" aria-label="Hidden input for saving file URL(s)" name="Files" type="hidden">
       <client-only>
         <div class="w-full h-auto">
-          <file-pond
+          <!-- <file-pond
             id="quote-pond"
             ref="pond"
             class="PondWrap"
@@ -20,6 +20,15 @@
               revert: null
             }"
             @init="handleFilePondInit"
+          /> -->
+          <file-pond
+            id="quote-pond"
+            ref="pond"
+            class="PondWrap"
+            name="test"
+            label-idle="Drop files here or <span class='filepond--label-action focus:outline-none'>browse</span>"
+            :allow-multiple="true"
+            @init="handleFilePondInit"
           />
         </div>
         <span class="sr-only" aria-label="Upload progress in percent">{{ uploadValue }}</span>
@@ -27,12 +36,6 @@
     </div>
   </div>
 </template>
-
-<style>
-.PondWrap > .filepond--root {
-  margin: 0 !important;
-}
-</style>
 
 <script>
 // Import FilePond styles
@@ -129,3 +132,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.PondWrap > .filepond--root {
+  margin: 0 !important;
+}
+</style>

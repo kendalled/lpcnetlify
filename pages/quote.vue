@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <QuoteConstruction />
+    <QuoteWrapper />
     <TailFoot />
   </div>
 </template>

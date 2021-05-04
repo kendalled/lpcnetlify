@@ -42,7 +42,7 @@
                   alt="Woman wearing customized pins"
                   width="1184"
                   height="1376"
-                  class="absolute inset-0 object-cover object-center w-full h-full bg-gray-100 rounded-lg shadow-lg myMinHeight lg:static lg:h-auto"
+                  class="lg:absolute inset-0 object-cover object-center w-full h-full bg-gray-100 rounded-lg shadow-lg myMinHeight lg:static lg:h-auto"
                 >
               </div>
               <figcaption class="flex mt-3 text-sm text-gray-500">
@@ -69,17 +69,6 @@
   </div>
 </template>
 
-<style scoped>
-.myMinHeight {
-  min-height: 10rem;
-}
-@media screen and (min-width: 1024px){
-  .myMinHeight {
-    min-height: 35rem;
-  }
-}
-</style>
-
 <script>
 export default {
   name: 'TwoColumnImage',
@@ -103,3 +92,14 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.myMinHeight {
+  min-height: 10rem;
+}
+@media screen and (min-width: 1024px){
+  .myMinHeight {
+    min-height: 35rem;
+  }
+}
+</style>

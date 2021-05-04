@@ -41,14 +41,8 @@
   </div>
 </template>
 
-<style scoped>
-.duration-400 {
-  transition-duration: 400ms;
-}
-</style>
-
 <script>
-// import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 // import { fireDb } from '~/plugins/firebase'
 import FloatingBanner from '~/components/FloatingBanner'
 import HiddenInputs from '~/components/HiddenInputs'
@@ -166,26 +160,26 @@ export default {
     },
     submitHandler () {
       if (this.doneFirst) {
-        this.addProject()
+        // this.addProject()
         this.$refs.quoteForm.submit()
       } else {
         this.errorNotif = true
       }
     },
-    addProject () {
-      const id = 'project-' + (this.$store.state.user.id)
-      console.log('adding quote!')
-      const quote = this.quote
-      // db reference
-      const collectionRef = fireDb.collection('Projects')
-      // sets in firestore
-      try {
-        collectionRef.doc(id).set(quote)
-      } catch (error) {
-        alert(error)
-      }
-      console.log('updated firestore??')
-    },
+    // addProject () {
+    //   const id = 'project-' + (this.$store.state.user.id)
+    //   console.log('adding quote!')
+    //   const quote = this.quote
+    //   // db reference
+    //   const collectionRef = fireDb.collection('Projects')
+    //   // sets in firestore
+    //   try {
+    //     collectionRef.doc(id).set(quote)
+    //   } catch (error) {
+    //     alert(error)
+    //   }
+    //   console.log('updated firestore??')
+    // },
     resetQuote () {
       this.$store.commit('prefs/resetPage')
     },
@@ -204,3 +198,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.duration-400 {
+  transition-duration: 400ms;
+}
+</style>
