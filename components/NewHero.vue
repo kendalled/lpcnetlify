@@ -2,7 +2,7 @@
   <div class="relative overflow-hidden sm:overflow-visible">
     <div class="absolute inset-x-0 bottom-0 bg-gray-100 h-1/2" />
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <div class="relative z-20 shadow-xl sm:rounded-2xl sm:overflow-hidden">
+      <div class="relative z-30 shadow-xl sm:rounded-2xl sm:overflow-hidden">
         <div class="absolute inset-0 bg-img scroll-bg">
           <!-- <img class="absolute object-cover w-full h-full bg-img scroll-bg" src="~/static/scrollingPins.png" alt="People working on laptops"> -->
           <div class="absolute inset-0 bg-gradient-to-r from-blue-800 to-light-blue-700 " style="mix-blend-mode: multiply;" />

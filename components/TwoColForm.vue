@@ -31,6 +31,7 @@
                     <input
                       id="deadline"
                       type="date"
+                      placeholder="mm/dd/yyyy"
                       name="Deadline"
                       class="block w-full mt-1 border-gray-300 rounded-md shadow-sm sm:text-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                       aria-describedby="deadline-optional"
@@ -56,7 +57,59 @@
                   Brief description of your design -  add detail if you do not have reference files.
                 </p>
               </div>
-              <CustomFileInput @file="newFile" />
+              <CustomFileInput class="hidden" @file="newFile" />
+              <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700">
+                  Reference file(s)
+                </label>
+                <div class="mt-1 grid grid-cols-5 px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                  <div v-if="isFiles" class="col-span-5 mb-4 md:mb-0 md:col-span-2 bg-gray-100 rounded space-x-2 flex items-center px-2 py-2 h-full">
+                    <img v-for="img in emitData.referenceFiles" :key="img" class="h-20 w-20 rounded object-cover shadow" :src="img">
+                  </div>
+                  <section class="flex justify-center" :class="isFiles ? 'col-span-5 md:col-span-3' : 'col-span-5'">
+                    <div class="space-y-1 text-center">
+                      <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                        <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <!-- <div v-if="!isFiles" class="flex text-sm text-gray-600">
+                        <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500">
+                          <span>Upload a file</span>
+                          <input
+                            id="file-upload"
+                            multiple
+                            name="file-upload"
+                            type="file"
+                            class="sr-only"
+                            @change="processFiles"
+                          >
+                        </label>
+                        <p class="pl-1">
+                          (one at a time)
+                        </p>
+                      </div> -->
+                      <div class="flex text-sm text-gray-600">
+                        <label v-for="f in emitData.referenceFiles.length + 1" v-show="f === emitData.referenceFiles.length + 1" :key="f" :for="'file-input-' + f" class="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500">
+                          <span>Upload a file</span>
+                          <input
+                            :id="'file-input-' + f"
+                            multiple
+                            :name="'file-input-' + f"
+                            type="file"
+                            class="sr-only"
+                            @change="processFiles"
+                          >
+                        </label>
+                        <p class="pl-1">
+                          (one at a time)
+                        </p>
+                      </div>
+                      <p class="text-xs text-gray-500">
+                        PNG, JPG, GIF up to 10MB
+                      </p>
+                    </div>
+                  </section>
+                </div>
+              </div>
             </section>
             <div class="px-4 py-3 text-right bg-gray-50 sm:px-6">
               <span class="inline-flex ml-2 rounded-md shadow-sm">
@@ -410,6 +463,12 @@ export default {
     }
   },
   computed: {
+    correctLength () {
+      return this.isFiles ? this.emitData.referenceFiles.length : 1
+    },
+    isFiles () {
+      return this.emitData.referenceFiles.length > 0
+    },
     quantityList () {
       return [
         '100',
@@ -454,6 +513,11 @@ export default {
     }
   },
   methods: {
+    processFiles (event) {
+      // const image = document.getElementById('imgSpot')
+      this.emitData.referenceFiles.push(URL.createObjectURL(event.target.files[0]))
+      console.log(event.target.files[0])
+    },
     submitHandler () {
       if (this.allInfo) {
         this.$emit('submitted')

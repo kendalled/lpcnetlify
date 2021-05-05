@@ -14,7 +14,14 @@
         <QuoteChoice @choice="selectProduct" @reset="resetQuote" />
       </header>
       <main>
-        <form ref="quoteForm" name="Quote Request" class="mx-auto max-w-7xl sm:px-6 lg:px-8" action="https://formspree.io/xbjzlvdb" method="POST">
+        <form
+          ref="quoteForm"
+          name="Quote Request"
+          class="mx-auto max-w-7xl sm:px-6 lg:px-8"
+          action="https://formspree.io/xbjzlvdb"
+          method="POST"
+          enctype="multipart/form-data"
+        >
           <!-- Replace with your content -->
           <input type="hidden" name="_next" value="https://lapelpinsandcoins.com/thanks">
           <input id="product" v-model="product" type="hidden" name="*Product">
