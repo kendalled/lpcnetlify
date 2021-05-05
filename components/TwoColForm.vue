@@ -57,7 +57,7 @@
                   Brief description of your design -  add detail if you do not have reference files.
                 </p>
               </div>
-              <CustomFileInput class="hidden" @file="newFile" />
+              <!-- <CustomFileInput class="hidden" @file="newFile" /> -->
               <div class="mt-4">
                 <label class="block text-sm font-medium text-gray-700">
                   Reference file(s)
@@ -420,12 +420,10 @@
 </template>
 
 <script>
-import CustomFileInput from '~/components/CustomFileInput'
 import CustomSelect from '~/components/CustomSelect'
 export default {
   name: 'TwoColForm',
   components: {
-    CustomFileInput,
     CustomSelect
   },
   props: {
