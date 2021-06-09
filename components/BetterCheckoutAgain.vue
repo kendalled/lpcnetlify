@@ -8,7 +8,7 @@
             <h1 class="font-bold text sm:text-lg text-gray-800">Order Summary</h1>
           </span>
           <div class="flex space-x-6 items-center">
-            <p class="text-gray-800 sm:text-lg font-">
+            <p class="text-gray-800 sm:text-lg">
               ${{ price || '0.00' }}
             </p>
             <a href="mailto:info@lapelpinsandcoins.com?subject=Checkout Help" target="_blank" title="Email customer support" class="inline-flex text-blue-700 bg-blue-100 hover:bg-blue-200 items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
@@ -22,8 +22,8 @@
           </div>
         </div>
       </section>
-      <!-- TODO: fix margin and padding inconsistencies id="payment-form" action="https://formspree.io/mqkylvwz" method="post" -->
-      <section class="space-y-6 mt-4 sm:mt-20 md:mt-24 bg-gray-100 z-10">
+      <!-- TODO: fix margin and padding inconsistencies -->
+      <form id="payment-form" action="https://formspree.io/mqkylvwz" method="post" class="space-y-6 mt-4 sm:mt-20 md:mt-24 bg-gray-100 z-10">
         <input type="hidden" name="_next" value="https://lapelpinsandcoins.com/ordered">
         <div class="py-5 sm:py-6 px-4 sm:px-6 lg:px-10 mx-auto max-w-7xl">
           <div class="md:grid md:grid-cols-3 md:gap-6">
@@ -36,9 +36,11 @@
               </p>
             </div>
             <div class="mt-5 md:mt-0 md:col-span-2">
-              <form id="payment-form">
+              <section id="payment-section">
                 <span class="grid grid-cols-3 sm:grid-cols-5 gap-6 w-full">
-                  <PaymentElement v-if="isStripeLoaded" @question="emitError" @token="tokenHandler" />
+                  <client-only>
+                    <PaymentElement v-if="isStripeLoaded" @question="emitError" @token="tokenHandler" />
+                  </client-only>
                   <div class="col-span-3">
                     <label for="_price" class="block text-sm font-medium text-gray-700">Order total</label>
                     <div class="mt-1 relative rounded-md shadow-sm">
@@ -73,7 +75,7 @@
                     </div>
                   </div>
                 </span>
-              </form>
+              </section>
             </div>
           </div>
         </div>
@@ -90,7 +92,7 @@
             </div>
             <div class="mt-5 md:mt-0 md:col-span-2">
               <!-- used to say 'form' -->
-              <form>
+              <section>
                 <div class="grid grid-cols-6 gap-6">
                   <div class="col-span-6 sm:col-span-3">
                     <label for="first_name" class="block text-sm font-medium text-gray-700">First name</label>
@@ -136,7 +138,7 @@
                     <input id="postal_code" type="text" name="postal_code" autocomplete="postal-code" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                   </div>
                 </div>
-              </form>
+              </section>
             </div>
           </div>
         </div>
@@ -153,7 +155,7 @@
             </div>
             <div class="mt-5 md:mt-0 md:col-span-2">
               <!-- used to be form -->
-              <form class="space-y-6">
+              <section class="space-y-6">
                 <fieldset>
                   <legend class="text-base font-medium text-gray-900">
                     By Email
@@ -218,7 +220,7 @@
                     </div>
                   </div>
                 </fieldset>
-              </form>
+              </section>
             </div>
           </div>
         </div>
@@ -231,7 +233,7 @@
             Submit order
           </button>
         </div>
-      </section>
+      </form>
 
     <!-- end checkout -->
     </main>
