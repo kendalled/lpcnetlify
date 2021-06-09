@@ -22,12 +22,6 @@ export default {
   css: [
   ],
 
-  html: {
-    minify: {
-      removeRedundantAttributes: false
-    }
-  },
-
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     {
@@ -127,6 +121,11 @@ export default {
   // },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    html: {
+      minify: {
+        removeRedundantAttributes: false
+      }
+    },
     babel: {
       plugins: [
         ['@babel/plugin-proposal-private-methods', {
