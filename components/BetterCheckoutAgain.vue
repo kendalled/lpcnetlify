@@ -50,9 +50,10 @@
                       <input
                         id="price"
                         v-model="price"
+                        type="text"
                         pattern="(\d+\.\d{1,2})"
                         name="_price"
-                        class="form-input focus:ring-blue-500 focus:border-blue-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
+                        class="focus:ring-blue-500 focus:border-blue-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
                         placeholder="0.00"
                         aria-describedby="price-currency"
                       >
@@ -68,7 +69,7 @@
                       Proof number
                     </label>
                     <div class="mt-1 rounded-md shadow-sm">
-                      <input id="proof" name="proof" placeholder="Proof #3" class="form-input block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                      <input id="proof" type="text" name="proof" placeholder="Proof #3" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                     </div>
                   </div>
                 </span>
@@ -93,22 +94,22 @@
                 <div class="grid grid-cols-6 gap-6">
                   <div class="col-span-6 sm:col-span-3">
                     <label for="first_name" class="block text-sm font-medium text-gray-700">First name</label>
-                    <input id="first_name" name="first_name" autocomplete="given-name" class="form-input mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input id="first_name" type="text" name="first_name" autocomplete="given-name" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                   </div>
 
                   <div class="col-span-6 sm:col-span-3">
                     <label for="last_name" class="block text-sm font-medium text-gray-700">Last name</label>
-                    <input id="last_name" name="last_name" autocomplete="family-name" class="form-input mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input id="last_name" type="text" name="last_name" autocomplete="family-name" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                   </div>
 
                   <div class="col-span-6 sm:col-span-4">
                     <label for="email_address" class="block text-sm font-medium text-gray-700">Email address</label>
-                    <input id="email_address" name="email_address" autocomplete="email" class="form-input mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input id="email_address" type="text" name="email_address" autocomplete="email" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                   </div>
 
                   <div class="col-span-6 sm:col-span-3">
                     <label for="country" class="block text-sm font-medium text-gray-700">Country / Region</label>
-                    <select id="country" name="country" autocomplete="country" class="form-input mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    <select id="country" name="country" autocomplete="country" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                       <option>United States</option>
                       <option>Canada</option>
                       <option>Mexico</option>
@@ -117,22 +118,22 @@
 
                   <div class="col-span-6">
                     <label for="street_address" class="block text-sm font-medium text-gray-700">Street address</label>
-                    <input id="street_address" name="street_address" autocomplete="street-address" class="form-input mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input id="street_address" type="text" name="street_address" autocomplete="street-address" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                   </div>
 
                   <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                     <label for="city" class="block text-sm font-medium text-gray-700">City</label>
-                    <input id="city" name="city" class="form-input mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input id="city" type="text" name="city" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                   </div>
 
                   <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                     <label for="state" class="block text-sm font-medium text-gray-700">State / Province</label>
-                    <input id="state" name="state" class="form-input mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input id="state" type="text" name="state" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                   </div>
 
                   <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                     <label for="postal_code" class="block text-sm font-medium text-gray-700">ZIP / Postal</label>
-                    <input id="postal_code" name="postal_code" autocomplete="postal-code" class="form-input mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input id="postal_code" type="text" name="postal_code" autocomplete="postal-code" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                   </div>
                 </div>
               </section>
@@ -160,7 +161,7 @@
                   <div class="mt-4 space-y-4">
                     <div class="flex items-start">
                       <div class="h-5 flex items-center">
-                        <input id="comments" name="comments" type="checkbox" class="form-input focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
+                        <input id="comments" name="comments" type="checkbox" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
                       </div>
                       <div class="ml-3 text-sm">
                         <label for="comments" class="font-medium text-gray-700">Production updates</label>
@@ -171,7 +172,7 @@
                     </div>
                     <div class="flex items-start">
                       <div class="flex items-center h-5">
-                        <input id="candidates" name="candidates" type="checkbox" class="form-input focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
+                        <input id="candidates" name="candidates" type="checkbox" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
                       </div>
                       <div class="ml-3 text-sm">
                         <label for="candidates" class="font-medium text-gray-700">Order tracking</label>
@@ -182,7 +183,7 @@
                     </div>
                     <div class="flex items-start">
                       <div class="flex items-center h-5">
-                        <input id="offers" name="offers" type="checkbox" class="form-input focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
+                        <input id="offers" name="offers" type="checkbox" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
                       </div>
                       <div class="ml-3 text-sm">
                         <label for="offers" class="font-medium text-gray-700">Special Offers</label>
@@ -204,15 +205,15 @@
                   </div>
                   <div class="mt-4 space-y-4">
                     <div class="flex items-center">
-                      <input id="push_everything" name="push_notifications" type="radio" class="form-input focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                      <input id="push_everything" name="push_notifications" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
                       <label for="push_everything" class="ml-3 block text-sm font-medium text-gray-700"> Everything </label>
                     </div>
                     <div class="flex items-center">
-                      <input id="push_email" name="push_notifications" type="radio" class="form-input focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                      <input id="push_email" name="push_notifications" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
                       <label for="push_email" class="ml-3 block text-sm font-medium text-gray-700"> Same as email </label>
                     </div>
                     <div class="flex items-center">
-                      <input id="push_nothing" name="push_notifications" type="radio" class="form-input focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                      <input id="push_nothing" name="push_notifications" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
                       <label for="push_nothing" class="ml-3 block text-sm font-medium text-gray-700"> No push notifications </label>
                     </div>
                   </div>
