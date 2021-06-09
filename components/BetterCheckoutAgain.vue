@@ -33,6 +33,7 @@
               </h3>
               <p class="mt-1 text-sm text-gray-500">
                 Please fill out the correct shippping information so that we can ship it to the you directly.
+                Begin by entering your payment information. The current proof number and order total are attached to each quote.
               </p>
             </div>
             <div class="mt-5 md:mt-0 md:col-span-2">
