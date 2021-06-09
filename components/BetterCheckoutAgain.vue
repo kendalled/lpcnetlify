@@ -85,7 +85,7 @@
                 Shipping Information
               </h3>
               <p class="mt-1 text-sm text-gray-500">
-                Please fill out the correct shippping information so that we can ship it to the you directly.
+                Please enter the correct shippping information to ensure there are no delays in production.
               </p>
             </div>
             <div class="mt-5 md:mt-0 md:col-span-2">
