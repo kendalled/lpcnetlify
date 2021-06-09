@@ -33,7 +33,7 @@
                       type="date"
                       placeholder="mm/dd/yyyy"
                       name="Deadline"
-                      class="block w-full mt-1 border-gray-300 rounded-md shadow-sm sm:text-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                      class="form-input block w-full mt-1 border-gray-300 rounded-md shadow-sm sm:text-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                       aria-describedby="deadline-optional"
                     >
                   </div>
@@ -49,7 +49,7 @@
                     v-model="emitData.description"
                     name="Design Details"
                     rows="3"
-                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm sm:text-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                    class="form-input block w-full mt-1 border-gray-300 rounded-md shadow-sm sm:text-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                     placeholder="A circular lapel pin with the state of Texas in the center."
                   />
                 </div>
@@ -157,7 +157,7 @@
                     type="text"
                     name="First Name"
                     required
-                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm"
+                    class="form-input block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm"
                   >
                 </div>
 
@@ -169,7 +169,7 @@
                     type="text"
                     name="Last Name"
                     required
-                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm"
+                    class="form-input block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm"
                   >
                 </div>
 
@@ -181,7 +181,7 @@
                     type="text"
                     name="Email"
                     required
-                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm"
+                    class="form-input block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm"
                   >
                 </div>
                 <div class="col-span-6 sm:col-span-3">
@@ -192,7 +192,7 @@
                     type="text"
                     name="Phone"
                     required
-                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm"
+                    class="form-input block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm"
                   >
                 </div>
                 <div class="col-span-6 sm:col-span-3">
@@ -208,7 +208,7 @@
                     type="text"
                     name="Street Address"
                     required
-                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm"
+                    class="form-input block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm"
                   >
                 </div>
 
@@ -220,13 +220,13 @@
                     type="text"
                     name="City"
                     required
-                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm"
+                    class="form-input block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm"
                   >
                 </div>
 
                 <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                   <label for="state" class="block text-sm font-medium leading-5 text-gray-700">State / Province</label>
-                  <select id="state" v-model="emitData.state" required class="block w-full mt-1 border-gray-300 rounded-md shadow-sm sm:text-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" name="state">
+                  <select id="state" v-model="emitData.state" required class="form-input block w-full mt-1 border-gray-300 rounded-md shadow-sm sm:text-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" name="state">
                     <option value="Select a State">
                       Select a State
                     </option>
@@ -394,7 +394,7 @@
                     type="text"
                     name="postal_code"
                     required
-                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm"
+                    class="form-input block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm"
                   >
                 </div>
               </div>
