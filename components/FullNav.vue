@@ -1,5 +1,5 @@
 <template>
-  <nav class="top-0 z-30 bg-white sm:sticky" @keydown.escape="closeAll">
+  <nav class="top-0 z-40 bg-white sm:sticky" @keydown.escape="closeAll">
     <div :class="[showBorder ? 'border-gray-200' : 'border-transparent']" class="relative z-20 transition-colors duration-150 ease-in-out bg-white border-b">
       <div class="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
         <div class="flex justify-between h-16">

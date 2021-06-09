@@ -12,10 +12,10 @@
 <script>
 import BoxxController from '~/components/BoxxController'
 export default {
-  layout: 'blank',
   components: {
     BoxxController
   },
+  layout: 'blank',
   data () {
     return {
       pressedButtons: []

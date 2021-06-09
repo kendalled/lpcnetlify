@@ -14,6 +14,17 @@ export default {
   components: {
     TailFoot
   },
+  head () {
+    return {
+      title: 'Free Quote Request | Lapel Pins & Coins',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Lapel Pins and Coins makes getting a Quote simple. Design your own custom lapel pin or challenge coin! Great for Military, Sports Pins, and Hobbyists alike.' }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://lapelpinsandcoins.com/quote' }
+      ]
+    }
+  },
   computed: {
     loggedIn () {
       return this.$store.getters.getUser
@@ -31,17 +42,6 @@ export default {
     //   console.log('no user, anon created')
     // }
     console.log('pre-form rendering')
-  },
-  head () {
-    return {
-      title: 'Free Quote Request | Lapel Pins & Coins',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Lapel Pins and Coins makes getting a Quote simple. Design your own custom lapel pin or challenge coin! Great for Military, Sports Pins, and Hobbyists alike.' }
-      ],
-      link: [
-        { rel: 'canonical', href: 'https://lapelpinsandcoins.com/quote' }
-      ]
-    }
   }
 }
 </script>

@@ -11,7 +11,7 @@ import ContentOnly from '@/components/ContentOnly.vue'
 import ContentImage from '@/components/ContentImage.vue'
 import TwoColumnContent from '@/components/TwoColumnContent.vue'
 
-Vue.component('page', Page)
+Vue.component('Page', Page)
 Vue.component('TwoColumnContent', TwoColumnContent)
 Vue.component('PinContentImage', PinContentImage)
 Vue.component('PinHeader', PinHeader)

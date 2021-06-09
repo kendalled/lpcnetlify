@@ -8,9 +8,9 @@
 import TailSidebar from '~/components/TailSidebar'
 
 export default {
-  layout: 'blank',
   components: {
     TailSidebar
-  }
+  },
+  layout: 'blank'
 }
 </script>

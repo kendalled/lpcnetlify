@@ -6,9 +6,20 @@
 // import { auth } from '~/plugins/firebase'
 import LoginWrapper from '~/components/LoginWrapper'
 export default {
-  layout: 'login',
   components: {
     LoginWrapper
+  },
+  layout: 'login',
+  head () {
+    return {
+      title: 'Account Login | Lapel Pins & Coins',
+      meta: [
+        { hid: 'description', name: 'description', content: 'We support traditional login methods like Email and Password, as well as Google, Microsoft, & Apple authentication. Sign up in seconds and get started with your design.' }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://lapelpinsandcoins.com/login' }
+      ]
+    }
   },
   methods: {
     login (email, pw) {
@@ -50,17 +61,6 @@ export default {
       //   console.log(e)
       // })
       console.log('signing out...')
-    }
-  },
-  head () {
-    return {
-      title: 'Account Login | Lapel Pins & Coins',
-      meta: [
-        { hid: 'description', name: 'description', content: 'We support traditional login methods like Email and Password, as well as Google, Microsoft, & Apple authentication. Sign up in seconds and get started with your design.' }
-      ],
-      link: [
-        { rel: 'canonical', href: 'https://lapelpinsandcoins.com/login' }
-      ]
     }
   }
 }

@@ -106,16 +106,6 @@ export default {
       para2: 'Our quality challenge coins are produced with industry-leading techinques. Veterans and collectors alike love our products for their authenticity. We use 100% stainless steel molds, and individually mint each coin. Decades of experience in both lapel pins and challenge coins allows us to ship your order securely.'
     }
   },
-  mounted () {
-    this.$store.commit('prefs/setPrefs', 'Challenge Coins')
-  },
-  methods: {
-    goQuote () {
-      if (process.browser) {
-        this.$router.push('/quote')
-      }
-    }
-  },
   head () {
     return {
       title: 'Custom Challenge Coins | Free Shipping | Lapel Pins & Coins',
@@ -125,6 +115,16 @@ export default {
       link: [
         { rel: 'canonical', href: 'https://lapelpinsandcoins.com/coins' }
       ]
+    }
+  },
+  mounted () {
+    this.$store.commit('prefs/setPrefs', 'Challenge Coins')
+  },
+  methods: {
+    goQuote () {
+      if (process.browser) {
+        this.$router.push('/quote')
+      }
     }
   }
 }

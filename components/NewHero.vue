@@ -1,6 +1,6 @@
 <template>
   <div class="relative overflow-hidden sm:overflow-visible">
-    <div class="absolute inset-x-0 bottom-0 bg-gray-100 h-1/2" />
+    <div class="absolute z-20 inset-x-0 bottom-0 bg-gray-100 h-1/2" />
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="relative z-30 shadow-xl sm:rounded-2xl sm:overflow-hidden">
         <div class="absolute inset-0 bg-img scroll-bg">

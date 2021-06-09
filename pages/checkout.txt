@@ -1,0 +1,118 @@
+<template>
+  <div class="min-h-screen bg-gray-100">
+    <QuoteBanner :show="errorNotif" :message="'Please enter your payment details.'" :message2="'Use the credit card field below.'" @close="closeNotif" />
+    <!-- old nav spot -->
+    <div class="pt-10 pb-20">
+      <header>
+        <div class="flex justify-between px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <h1 class="text-2xl font-bold leading-tight text-gray-900 sm:text-3xl">
+            Complete your order
+          </h1>
+          <!-- <div class="inline-block">
+            <div class="flex items-center justify-between w-8 h-full sm:items-end dots-box">
+              <span :class="[checkoutStep === 0 ? 'bg-gray-200 hover:bg-gray-300 border-gray-400' : 'bg-blue-400 hover:bg-blue-300 border-blue-400']" class="w-3 h-3 mt-2 border rounded-full transition-colors duration-200 sm:mt-0" />
+              <span class="w-3 h-3 mt-2 bg-gray-200 border border-gray-400 rounded-full transition-colors duration-200 hover:bg-gray-300 sm:mt-0" />
+            </div>
+          </div> -->
+          <ProgressBullets :step="checkoutStep" :total="2" @page="changePage" />
+        </div>
+      </header>
+      <main>
+        <!-- Main Form Steps -->
+        <!-- <TwoColVanilla :parent-step="checkoutStep" @error="showError" @status="changePage" /> -->
+      </main>
+    </div>
+    <TailFoot />
+  </div>
+</template>
+
+<script>
+// import { auth } from '~/plugins/firebase.js'
+import ProgressBullets from '~/components/ProgressBullets'
+// import TwoColVanilla from '~/components/TwoColVanilla'
+import QuoteBanner from '~/components/QuoteBanner'
+import TailFoot from '~/components/TailFoot'
+// import OrderSummary from '~/components/OrderSummary'
+export default {
+  components: {
+    ProgressBullets,
+    TailFoot,
+    QuoteBanner
+  },
+  data () {
+    return {
+      errorNotif: false,
+      checkoutStep: 0,
+      sidebarOpen: false,
+      doc: []
+    }
+  },
+  head () {
+    return {
+      title: 'Checkout (Complete Your Order) | Lapel Pins & Coins',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Ready to submit your order for production? Use our quick and easy checkout form. Just select the proof you\'d like and enter your payment details. We protect your privacy and use secure, end-to-end encryption on all data.' }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://lapelpinsandcoins.com/checkout' }
+      ]
+    }
+  },
+  computed: {
+    loggedIn () {
+      return this.$store.getters.getUser
+    }
+  },
+  mounted () {
+    // todo: only run if no user
+    // if (!this.loggedIn) {
+    //   auth.signInAnonymously().catch(function (error) {
+    //   // Handle Errors here.
+    //     const errorCode = error.code
+    //     console.log(errorCode)
+    //   // ...
+    //   })
+    //   console.log('no user, anon created')
+    // //   if (process.browser) {
+    // //     this.isStripeLoaded
+    // // }
+    console.log('mounted')
+  },
+  // async asyncData ({ app, params, error, store }) {
+  //   const id = 'OcnlqUf94mOvZQ24iYZvWTwl42w1'
+  //   const dbRef = fireDb.collection('Projects').where('customer', '==', id)
+  //   let data
+  //   try {
+  //     data = []
+  //     await dbRef.get().then(function (querySnapshot) {
+  //       querySnapshot.forEach(function (doc) {
+  //         // doc.data() is never undefined for query doc snapshots
+  //         // console.log(doc.id, ' => ', doc.data())
+  //         data.push(doc.data())
+  //       })
+  //     })
+  //   } catch (e) {
+  //     // TODO: error handling
+  //     console.log(e)
+  //   }
+  //   return {
+  //     doc: data
+  //   }
+  // },
+  methods: {
+    changePage (val) {
+      this.checkoutStep = val
+    },
+    showError () {
+      this.errorNotif = true
+      const vm = this
+      setTimeout(() => {
+        vm.errorNotif = false
+      }, 4000)
+    },
+    closeNotif () {
+      this.errorNotif = false
+    }
+  }
+}
+</script>

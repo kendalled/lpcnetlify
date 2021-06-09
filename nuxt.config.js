@@ -28,7 +28,7 @@ export default {
       src: '~/plugins/components.js',
       defer: true
     }, {
-      src: "~/plugins/vClickOutside.client.js"
+      src: '~/plugins/vClickOutside.client.js'
     }
   ],
 
@@ -61,7 +61,7 @@ export default {
     '@nuxtjs/sitemap',
     '@nuxtjs/axios'
     // 'nuxt-purgecss'
-  ], 
+  ],
   optimizedImages: {
     inlineImageLimit: -1,
     handleImages: ['jpeg', 'png', 'webp', 'svg'],

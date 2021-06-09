@@ -51,9 +51,6 @@ export default {
   data () {
     return { story: { content: {} } }
   },
-  mounted () {
-    this.$store.commit('prefs/setPrefs', 'Lapel Pins')
-  },
   head () {
     return {
       title: 'Custom ' + this.story.name + ' Pins | Lapel Pins & Coins',
@@ -64,6 +61,9 @@ export default {
         { rel: 'canonical', href: 'https://lapelpinsandcoins.com/pins/' + this.story.slug }
       ]
     }
+  },
+  mounted () {
+    this.$store.commit('prefs/setPrefs', 'Lapel Pins')
   }
 }
 </script>

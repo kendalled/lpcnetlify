@@ -14,12 +14,12 @@ import ParagraphImage from '~/components/ParagraphImage'
 import SecondCard from '~/components/SecondCard'
 import TailFoot from '~/components/TailFoot'
 export default {
-  layout: 'default',
   components: {
     ProductCard,
     ParagraphImage,
     SecondCard,
     TailFoot
-  }
+  },
+  layout: 'default'
 }
 </script>

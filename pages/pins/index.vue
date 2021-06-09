@@ -339,16 +339,6 @@ export default {
       ]
     }
   },
-  mounted () {
-    this.$store.commit('prefs/setPrefs', 'Lapel Pins')
-  },
-  methods: {
-    goQuote () {
-      if (process.browser) {
-        this.$router.push('/quote')
-      }
-    }
-  },
   head () {
     // const items = this.questions.map((item, index) => ({
     //   '@type': 'Question',
@@ -419,6 +409,16 @@ export default {
       link: [
         { rel: 'canonical', href: 'https://lapelpinsandcoins.com/pins' }
       ]
+    }
+  },
+  mounted () {
+    this.$store.commit('prefs/setPrefs', 'Lapel Pins')
+  },
+  methods: {
+    goQuote () {
+      if (process.browser) {
+        this.$router.push('/quote')
+      }
     }
   }
 }

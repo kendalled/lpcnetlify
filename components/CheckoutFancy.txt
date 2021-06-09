@@ -19,11 +19,6 @@
         Send
       </button>
     </form> -->
-    <div class="block w-full mb-4 sm:mb-12">
-      <h1 class="text-3xl font-extrabold text-center text-gray-800 sm:text-4xl">
-        Complete your order
-      </h1>
-    </div>
     <div class="card-form">
       <div class="card-list">
         <div class="card-item" :class="{ '-active' : isCardFlipped }">
@@ -266,19 +261,19 @@ export default {
   computed: {
     getCardType () {
       const number = this.cardNumber
-      let re = new RegExp('^4')
+      let re = /^4/
       if (number.match(re) != null) { return 'visa' }
 
-      re = new RegExp('^(34|37)')
+      re = /^(34|37)/
       if (number.match(re) != null) { return 'amex' }
 
-      re = new RegExp('^5[1-5]')
+      re = /^5[1-5]/
       if (number.match(re) != null) { return 'mastercard' }
 
-      re = new RegExp('^6011')
+      re = /^6011/
       if (number.match(re) != null) { return 'discover' }
 
-      re = new RegExp('^9792')
+      re = /^9792/
       if (number.match(re) != null) { return 'troy' }
 
       return 'visa' // default type
@@ -369,7 +364,7 @@ body {
   &__inner {
     background: #fff;
     // box-shadow: 3px 13px 30px 0px rgba(21, 34, 67, 0.2);
-    box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+    // box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
     border-radius: 10px;
     padding: 35px;
     padding-top: 180px;

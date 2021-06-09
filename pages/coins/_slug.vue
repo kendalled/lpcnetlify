@@ -56,9 +56,6 @@ export default {
       price: '3.05'
     }
   },
-  mounted () {
-    this.$store.commit('prefs/setPrefs', 'Challenge Coins')
-  },
   head () {
     return {
       title: 'Custom ' + this.story.name + ' Challenge Coins | Lapel Pins & Coins',
@@ -69,6 +66,9 @@ export default {
         { rel: 'canonical', href: 'https://lapelpinsandcoins.com/coins/' + this.story.slug }
       ]
     }
+  },
+  mounted () {
+    this.$store.commit('prefs/setPrefs', 'Challenge Coins')
   }
 }
 </script>

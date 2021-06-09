@@ -12,7 +12,7 @@ module.exports = {
       'plugins/**/*.js',
       'nuxt.config.js'
     ],
-    defaultExtractor: (content) => content.match(/[\w-/.:]+(?<!:)/g) || []
+    defaultExtractor: content => content.match(/[\w-/.:]+(?<!:)/g) || []
   },
   variants: {
     extend: {
@@ -21,7 +21,7 @@ module.exports = {
       boxShadow: ['group-focus'],
       opacity: ['group-focus'],
       textColor: ['group-focus', 'active'],
-      textDecoration: ['group-focus'],
+      textDecoration: ['group-focus']
     }
   },
   theme: {
@@ -29,13 +29,13 @@ module.exports = {
       colors: {
         orange: colors.orange,
         'light-blue': colors.lightBlue,
-        'cool-gray': colors.coolGray,
+        'cool-gray': colors.coolGray
       },
       typography: {},
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
-      },
-    },
+        sans: ['Inter', ...defaultTheme.fontFamily.sans]
+      }
+    }
   },
   plugins: [
     require('@tailwindcss/typography'),

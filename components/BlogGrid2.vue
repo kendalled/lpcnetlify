@@ -121,6 +121,13 @@ export default {
   components: {
     BlogFooter
   },
+  data () {
+    return {
+      loaded: false,
+      selected: 1,
+      result: null
+    }
+  },
   async fetch () {
     const version = this.$nuxt.context.query._storyblok || this.$nuxt.context.isDev ? 'draft' : 'published'
     // Load the JSON from the API
@@ -139,13 +146,6 @@ export default {
     //   .catch((err) => {
     //     error({ statusCode: 404, message: 'Page not found: ' + err })
     //   })
-  },
-  data () {
-    return {
-      loaded: false,
-      selected: 1,
-      result: null
-    }
   },
   computed: {
     correctSet () {

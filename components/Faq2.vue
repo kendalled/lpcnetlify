@@ -92,11 +92,6 @@ export default {
       ]
     }
   },
-  methods: {
-    open (val) {
-      this.questions[val].opened = !this.questions[val].opened
-    }
-  },
   head () {
     const items = this.questions.map((item, index) => ({
       '@type': 'Question',
@@ -120,6 +115,11 @@ export default {
           json: structuredData
         }
       ]
+    }
+  },
+  methods: {
+    open (val) {
+      this.questions[val].opened = !this.questions[val].opened
     }
   }
 }

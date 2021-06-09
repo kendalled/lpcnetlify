@@ -197,7 +197,7 @@ export default {
       const path = this.$route.path
       return (path === '/admin' || path === '/admin/') ? 0 : path === '/admin/projects' ? 1 : path === '/admin/changelog' ? 2 : path === '/admin/artwork' ? 3 : 4
     }
-  },
+  }
   // mounted () {
   //   const user = auth.currentUser
   //   if (user != null) {

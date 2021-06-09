@@ -11,10 +11,10 @@
 import BadgeSetExpand from '~/components/BadgeSetExpand'
 
 export default {
-  layout: 'blank',
   components: {
     BadgeSetExpand
   },
+  layout: 'blank',
   data () {
     return {
       showDrop: false

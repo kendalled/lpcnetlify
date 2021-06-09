@@ -216,9 +216,9 @@
 <script>
 import HelpSection from '~/components/HelpSection'
 export default {
-  layout: 'default',
   components: {
     HelpSection
-  }
+  },
+  layout: 'default'
 }
 </script>
