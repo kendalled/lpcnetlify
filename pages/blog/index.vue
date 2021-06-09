@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .blogFooter {
   flex-shrink: 0;
 }
@@ -41,10 +41,10 @@ main {
   padding: 0 20px;
   max-width: 600px;
   margin: 40px auto 60px;
+}
 
-  p {
-    line-height: 1.6;
-  }
+.blog__overview > p {
+  line-height: 1.6;
 }
 
 .blog__detail-link {

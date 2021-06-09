@@ -77,7 +77,7 @@
         </form>
       </div>
     </transition>
-    <transition
+    <!-- <transition
       enter-class="transform opacity-0"
       enter-active-class="transition-opacity duration-200 ease-out"
       enter-to-class="transform scale-100 opacity-100"
@@ -86,17 +86,17 @@
       leave-to-class="transform opacity-0"
     >
       <Loader v-if="isLoader" />
-    </transition>
+    </transition> -->
   </div>
 </template>
 
 <script>
-import Loader from '~/components/Loader'
+// import Loader from '~/components/Loader'
 export default {
   name: 'LoginWrapper',
-  components: {
-    Loader
-  },
+  // components: {
+  //   Loader
+  // },
   data () {
     return {
       email: '',

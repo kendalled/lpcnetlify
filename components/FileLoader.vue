@@ -2,10 +2,10 @@
   <div class="my-10 loader" />
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .loader {
   position: relative;
-  // transform: translate(-50%,-50%);
+  /* transform: translate(-50%,-50%); */
   left: 0%;
   width: 24px;
   height: 24px;
