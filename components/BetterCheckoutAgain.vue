@@ -22,8 +22,8 @@
           </div>
         </div>
       </section>
-      <!-- TODO: fix margin and padding inconsistencies -->
-      <form id="payment-form" action="https://formspree.io/mqkylvwz" method="post" class="space-y-6 mt-4 sm:mt-20 md:mt-24 bg-gray-100 z-10">
+      <!-- TODO: fix margin and padding inconsistencies id="payment-form" action="https://formspree.io/mqkylvwz" method="post" -->
+      <section class="space-y-6 mt-4 sm:mt-20 md:mt-24 bg-gray-100 z-10">
         <input type="hidden" name="_next" value="https://lapelpinsandcoins.com/ordered">
         <div class="py-5 sm:py-6 px-4 sm:px-6 lg:px-10 mx-auto max-w-7xl">
           <div class="md:grid md:grid-cols-3 md:gap-6">
@@ -36,7 +36,7 @@
               </p>
             </div>
             <div class="mt-5 md:mt-0 md:col-span-2">
-              <section id="payment-section">
+              <form id="payment-form">
                 <span class="grid grid-cols-3 sm:grid-cols-5 gap-6 w-full">
                   <PaymentElement v-if="isStripeLoaded" @question="emitError" @token="tokenHandler" />
                   <div class="col-span-3">
@@ -73,7 +73,7 @@
                     </div>
                   </div>
                 </span>
-              </section>
+              </form>
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@
             </div>
             <div class="mt-5 md:mt-0 md:col-span-2">
               <!-- used to say 'form' -->
-              <section>
+              <form>
                 <div class="grid grid-cols-6 gap-6">
                   <div class="col-span-6 sm:col-span-3">
                     <label for="first_name" class="block text-sm font-medium text-gray-700">First name</label>
@@ -136,7 +136,7 @@
                     <input id="postal_code" type="text" name="postal_code" autocomplete="postal-code" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                   </div>
                 </div>
-              </section>
+              </form>
             </div>
           </div>
         </div>
@@ -153,7 +153,7 @@
             </div>
             <div class="mt-5 md:mt-0 md:col-span-2">
               <!-- used to be form -->
-              <section class="space-y-6">
+              <form class="space-y-6">
                 <fieldset>
                   <legend class="text-base font-medium text-gray-900">
                     By Email
@@ -218,7 +218,7 @@
                     </div>
                   </div>
                 </fieldset>
-              </section>
+              </form>
             </div>
           </div>
         </div>
@@ -231,7 +231,7 @@
             Submit order
           </button>
         </div>
-      </form>
+      </section>
 
     <!-- end checkout -->
     </main>
