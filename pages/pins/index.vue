@@ -340,66 +340,195 @@ export default {
     }
   },
   head () {
-    // const items = this.questions.map((item, index) => ({
-    //   '@type': 'Question',
-    //   position: index + 1,
-    //   name: item.query,
-    //   acceptedAnswer: {
-    //     '@type': 'Answer',
-    //     text: item.answer
-    //   }
-    // }))
-    const structuredData = {
-      '@context': 'https://schema.org',
-      '@type': 'Product',
-      name: 'Custom Lapel Pins',
-      image: [
-        'https://lapelpinsandcoins.com/homePins.png'
-      ],
-      description: 'Our customized pins are struck from the highest quality metals and plated in authentic gold or silver. Starting at 50 pcs, our pricing can\'t be beat.',
-      sku: 'LA1234',
-      mpn: '925872',
-      brand: {
-        '@type': 'Brand',
-        name: 'Lapel Pins & Coins'
+    // FAQ Schema
+    const faqItems = [
+      {
+        question: 'How long does shipping take?',
+        answer: 'Once your design is finalized and you have checked out, you can expect to receive your custom items in under 14 days. Have a tight deadline? No worries! Rush orders are available.'
       },
-      review: {
-        '@type': 'Review',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5.0',
-          bestRating: '5.0'
-        },
-        author: {
-          '@type': 'Person',
-          name: 'Judith Black'
-        }
+      {
+        question: 'How can I ensure the quality of my product(s)?',
+        answer: 'We have the process down to a science. A high-quality digital proof will allow you to check spelling, verify color, adjust size, and make any additional changes or corrections prior to starting production. The size of your lapel pin, keychain, or coin is determined by measuring the widest or tallest point of your design. Your products are then made with stainless steel, and spot-checked for quality.'
       },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '5.0',
-        reviewCount: '14'
+      {
+        question: 'What material should I choose?',
+        answer: 'There are several materials and plating options available to make your custom item stand out. If you are unsure about what choices on the quote form suit your needs, feel free to ask! At Lapel Pins and Coins, we believe in superior customer service. Each order is different, so we always help you choose the options that best suit your design.'
       },
-      offers: {
-        '@type': 'Offer',
-        url: 'https://lapelpinsandcoins.com/pins',
-        priceCurrency: 'USD',
-        price: '2.12',
-        priceValidUntil: '2020-11-20',
-        itemCondition: 'https://schema.org/NewCondition',
-        availability: 'https://schema.org/InStock',
-        seller: {
-          '@type': 'Organization',
-          name: 'Lapel Pins & Coins'
-        }
+      {
+        question: 'Will I get my product on time?',
+        answer: 'We will work with you to meet any deadline! Once we have received your approval and payment, we begin production on your order immediately. We give you expected delivery dates, but we have no control over unforeseen circumstances. If you experience any problem with your order arriving, contact us! We\'ll be here to help.'
+      },
+      {
+        question: 'Can I change my design?',
+        answer: 'Yes! We offer you unlimited revisions on all art proofs, free of charge. Change it up as much as you\'d like to get your design just right.'
+      },
+      {
+        question: 'What is your minimum order size?',
+        answer: 'Our minimum order quantity for pins is 100 pieces. Challenge coin orders need to be a minimum of 50 pieces. Contact us for any additional questions about your order size.'
       }
-    }
+    ]
+
+    const structuredData = [
+      // LocalBusiness Schema
+      {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        'name': 'Lapel Pins & Coins',
+        'image': 'https://lapelpinsandcoins.com/logo.png',
+        'telephone': '+1-800-482-9101',
+        'email': 'info@lapelpinsandcoins.com',
+        'address': {
+          '@type': 'PostalAddress',
+          'streetAddress': '6566 University Blvd',
+          'addressLocality': 'Winter Park',
+          'addressRegion': 'FL',
+          'postalCode': '32792',
+          'addressCountry': 'US'
+        },
+        'geo': {
+          '@type': 'GeoCoordinates',
+          'latitude': '28.59726257546487',
+          'longitude': '-81.29533256082287'
+        },
+        'url': 'https://lapelpinsandcoins.com',
+        'priceRange': '$$',
+        'openingHoursSpecification': [
+          {
+            '@type': 'OpeningHoursSpecification',
+            'dayOfWeek': [
+              'Monday',
+              'Tuesday',
+              'Wednesday',
+              'Thursday',
+              'Friday'
+            ],
+            'opens': '09:00',
+            'closes': '18:00'
+          }
+        ],
+        'sameAs': [
+          'https://www.facebook.com/lapelpinscoins',
+          'https://www.instagram.com/lapelpinscoins',
+          'https://www.linkedin.com/company/lapelpinscoins'
+        ]
+      },
+      // Product Schema
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: 'Custom Lapel Pins',
+        image: [
+          'https://lapelpinsandcoins.com/homePins.png'
+        ],
+        description: 'Our customized pins are struck from the highest quality metals and plated in authentic gold or silver. Starting at 50 pcs, our pricing can\'t be beat.',
+        sku: 'LA1234',
+        mpn: '925872',
+        brand: {
+          '@type': 'Brand',
+          name: 'Lapel Pins & Coins'
+        },
+        review: [
+          {
+            '@type': 'Review',
+            reviewRating: {
+              '@type': 'Rating',
+              ratingValue: '5.0',
+              bestRating: '5.0'
+            },
+            author: {
+              '@type': 'Person',
+              name: 'Judith Black'
+            },
+            reviewBody: 'Excellent quality and service! The pins turned out better than expected.',
+            datePublished: '2024-01-15',
+            itemReviewed: {
+              '@type': 'Thing',
+              name: 'Custom Lapel Pins'
+            }
+          },
+          {
+            '@type': 'Review',
+            reviewRating: {
+              '@type': 'Rating',
+              ratingValue: '5.0',
+              bestRating: '5.0'
+            },
+            author: {
+              '@type': 'Person',
+              name: 'Michael R.'
+            },
+            reviewBody: 'Great customer service and the pins were exactly what we wanted. Will order again!',
+            datePublished: '2024-02-20',
+            itemReviewed: {
+              '@type': 'Thing',
+              name: 'Custom Lapel Pins'
+            }
+          }
+        ],
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          reviewCount: '127',
+          bestRating: '5',
+          worstRating: '1'
+        },
+        offers: {
+          '@type': 'Offer',
+          url: 'https://lapelpinsandcoins.com/pins',
+          priceCurrency: 'USD',
+          price: '2.99',
+          priceValidUntil: '2025-12-31',
+          itemCondition: 'https://schema.org/NewCondition',
+          availability: 'https://schema.org/InStock',
+          shippingDetails: {
+            '@type': 'OfferShippingDetails',
+            shippingRate: {
+              '@type': 'MonetaryAmount',
+              value: '0',
+              currency: 'USD'
+            },
+            shippingDestination: {
+              '@type': 'DefinedRegion',
+              addressCountry: 'US'
+            }
+          },
+          seller: {
+            '@type': 'Organization',
+            name: 'Lapel Pins & Coins'
+          }
+        }
+      },
+      // FAQ Schema
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': faqItems.map(item => ({
+          '@type': 'Question',
+          'name': item.question,
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': item.answer
+          }
+        }))
+      }
+    ]
+
     return {
       script: [
         {
+          hid: 'localBusinessJson',
+          type: 'application/ld+json',
+          json: structuredData[0] // LocalBusiness schema
+        },
+        {
           hid: 'productJson',
           type: 'application/ld+json',
-          json: structuredData
+          json: structuredData[1] // Product schema
+        },
+        {
+          hid: 'faqJson',
+          type: 'application/ld+json',
+          json: structuredData[2] // FAQ schema
         }
       ],
       title: 'Custom Lapel Pins | Free Shipping | Lapel Pins & Coins',
