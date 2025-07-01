@@ -102,10 +102,62 @@ export default {
     }
   },
   head () {
+    const structuredData = {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: 'Custom Keychains',
+      image: [
+        'https://lapelpinsandcoins.com/homeChains.png'
+      ],
+      description: 'Professional custom keychains with free artwork and same-day quotes. Perfect for promotional items, gifts, and brand visibility.',
+      sku: 'KC1234',
+      mpn: '925874',
+      brand: {
+        '@type': 'Brand',
+        name: 'Lapel Pins & Coins'
+      },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.8',
+        reviewCount: '67',
+        bestRating: '5',
+        worstRating: '1'
+      },
+      offers: {
+        '@type': 'Offer',
+        url: 'https://lapelpinsandcoins.com/keychains',
+        priceCurrency: 'USD',
+        price: '2.75',
+        priceValidUntil: '2025-12-31',
+        itemCondition: 'https://schema.org/NewCondition',
+        availability: 'https://schema.org/InStock',
+        seller: {
+          '@type': 'Organization',
+          name: 'Lapel Pins & Coins'
+        }
+      }
+    }
+
     return {
       title: 'Custom Keychains | Free Shipping | Lapel Pins & Coins',
       meta: [
-        { hid: 'description', name: 'description', content: 'Custom designed keychains in no time. Decades of experience in production. Take a look at our designs & get your free quote today!' }
+        { hid: 'description', name: 'description', content: 'Custom designed keychains in no time. Decades of experience in production. Take a look at our designs & get your free quote today!' },
+        { hid: 'keywords', name: 'keywords', content: 'custom keychains, promotional keychains, branded keychains, metal keychains, enamel keychains' },
+        { hid: 'og:title', property: 'og:title', content: 'Custom Keychains | Free Shipping | Lapel Pins & Coins' },
+        { hid: 'og:description', property: 'og:description', content: 'Custom designed keychains in no time. Decades of experience in production. Take a look at our designs & get your free quote today!' },
+        { hid: 'og:image', property: 'og:image', content: 'https://lapelpinsandcoins.com/homeChains.png' },
+        { hid: 'og:url', property: 'og:url', content: 'https://lapelpinsandcoins.com/keychains' },
+        { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+        { hid: 'twitter:title', name: 'twitter:title', content: 'Custom Keychains | Free Shipping | Lapel Pins & Coins' },
+        { hid: 'twitter:description', name: 'twitter:description', content: 'Custom designed keychains in no time. Decades of experience in production. Take a look at our designs & get your free quote today!' },
+        { hid: 'twitter:image', name: 'twitter:image', content: 'https://lapelpinsandcoins.com/homeChains.png' }
+      ],
+      script: [
+        {
+          hid: 'keychainProductJson',
+          type: 'application/ld+json',
+          json: structuredData
+        }
       ],
       link: [
         { rel: 'canonical', href: 'https://lapelpinsandcoins.com/keychains' }

@@ -14,6 +14,15 @@ export default {
       errorNotif: false
     }
   },
+  head () {
+    return {
+      title: 'Secure Checkout | Lapel Pins & Coins',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Complete your secure checkout for custom lapel pins, challenge coins, or keychains. Safe payment processing with instant confirmation.' },
+        { hid: 'robots', name: 'robots', content: 'noindex, nofollow' }
+      ]
+    }
+  },
   methods: {
     showError () {
       this.errorNotif = true

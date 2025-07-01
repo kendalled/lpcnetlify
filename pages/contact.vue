@@ -219,6 +219,23 @@ export default {
   components: {
     HelpSection
   },
-  layout: 'default'
+  layout: 'default',
+  head () {
+    return {
+      title: 'Contact Us | Questions & Support | Lapel Pins & Coins',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Contact Lapel Pins & Coins for questions about custom pins, challenge coins, and keychains. Expert support team ready to help with your order.' },
+        { hid: 'og:title', property: 'og:title', content: 'Contact Us | Questions & Support | Lapel Pins & Coins' },
+        { hid: 'og:description', property: 'og:description', content: 'Contact Lapel Pins & Coins for questions about custom pins, challenge coins, and keychains. Expert support team ready to help with your order.' },
+        { hid: 'og:url', property: 'og:url', content: 'https://lapelpinsandcoins.com/contact' },
+        { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
+        { hid: 'twitter:title', name: 'twitter:title', content: 'Contact Us | Questions & Support | Lapel Pins & Coins' },
+        { hid: 'twitter:description', name: 'twitter:description', content: 'Contact Lapel Pins & Coins for questions about custom pins, challenge coins, and keychains. Expert support team ready to help with your order.' }
+      ],
+      link: [
+        { hid: 'canonical', rel: 'canonical', href: 'https://lapelpinsandcoins.com/contact' }
+      ]
+    }
+  }
 }
 </script>

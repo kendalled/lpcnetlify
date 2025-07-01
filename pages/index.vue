@@ -43,6 +43,19 @@ export default {
   },
   head () {
     return {
+      title: 'Custom Lapel Pins & Challenge Coins | Same Day Quotes | Lapel Pins & Coins',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Professional custom lapel pins, challenge coins & keychains. Over 20 years experience, free artwork, same-day quotes. Military, corporate & promotional items. Get started today!' },
+        { hid: 'keywords', name: 'keywords', content: 'custom lapel pins, challenge coins, keychains, promotional items, military pins, corporate gifts, enamel pins' },
+        { hid: 'og:title', property: 'og:title', content: 'Custom Lapel Pins & Challenge Coins | Same Day Quotes' },
+        { hid: 'og:description', property: 'og:description', content: 'Professional custom lapel pins, challenge coins & keychains. Over 20 years experience, free artwork, same-day quotes.' },
+        { hid: 'og:image', property: 'og:image', content: 'https://lapelpinsandcoins.com/homePins.png' },
+        { hid: 'og:url', property: 'og:url', content: 'https://lapelpinsandcoins.com' },
+        { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+        { hid: 'twitter:title', name: 'twitter:title', content: 'Custom Lapel Pins & Challenge Coins | Same Day Quotes' },
+        { hid: 'twitter:description', name: 'twitter:description', content: 'Professional custom lapel pins, challenge coins & keychains. Over 20 years experience, free artwork, same-day quotes.' },
+        { hid: 'twitter:image', name: 'twitter:image', content: 'https://lapelpinsandcoins.com/homePins.png' }
+      ],
       link: [
         { hid: 'canonical', rel: 'canonical', href: 'https://lapelpinsandcoins.com' }
       ]

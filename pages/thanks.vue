@@ -10,6 +10,15 @@ export default {
   components: {
     ThanksModal
   },
-  layout: 'login'
+  layout: 'login',
+  head () {
+    return {
+      title: 'Thank You | Quote Received | Lapel Pins & Coins',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Thank you for your quote request! Our team will contact you within 24 hours with custom artwork and pricing for your lapel pins or challenge coins.' },
+        { hid: 'robots', name: 'robots', content: 'noindex, nofollow' }
+      ]
+    }
+  }
 }
 </script>

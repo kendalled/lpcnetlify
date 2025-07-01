@@ -57,10 +57,20 @@ export default {
     }
   },
   head () {
+    const title = 'Custom ' + this.story.name + ' Challenge Coins | Lapel Pins & Coins'
+    const description = this.story.content.teaserText || 'Custom ' + this.story.name + ' challenge coins with free artwork and same-day quotes. Professional quality with 20+ years experience.'
     return {
-      title: 'Custom ' + this.story.name + ' Challenge Coins | Lapel Pins & Coins',
+      title,
       meta: [
-        { hid: 'description', name: 'description', content: this.story.content.teaserText }
+        { hid: 'description', name: 'description', content: description },
+        { hid: 'keywords', name: 'keywords', content: `${this.story.name} challenge coins, custom coins, military coins, commemorative coins` },
+        { hid: 'og:title', property: 'og:title', content: title },
+        { hid: 'og:description', property: 'og:description', content: description },
+        { hid: 'og:url', property: 'og:url', content: 'https://lapelpinsandcoins.com/coins/' + this.story.slug },
+        { hid: 'og:type', property: 'og:type', content: 'product' },
+        { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
+        { hid: 'twitter:title', name: 'twitter:title', content: title },
+        { hid: 'twitter:description', name: 'twitter:description', content: description }
       ],
       link: [
         { rel: 'canonical', href: 'https://lapelpinsandcoins.com/coins/' + this.story.slug }
