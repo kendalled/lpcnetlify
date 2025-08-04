@@ -167,7 +167,7 @@
           </a>
         </div>
         <p class="mt-8 text-base text-gray-400 leading-6 md:mt-0 md:order-1">
-          &copy; 2020 Lapel Pins &amp; Coins. All rights reserved.
+          &copy; 2025 Lapel Pins &amp; Coins. All rights reserved.
         </p>
       </div>
     </div>
